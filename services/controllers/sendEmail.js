@@ -48,13 +48,13 @@ exports.emailViaAWS_SES = async(req, res, next) => {
                 `<html>
                     <body>
                     <p>Dear ${profileUserName},</p>
-                    <p>Portfol.io User <a href="${portfolioDomain}/profile/${requester.id}" target="_blank" style="color:#000"><strong>${requesterName}</strong></a> 
+                    <p>Portfol.io User <span style="color:#000"><strong>${requesterName}</strong></span> 
                     came across your profile on Portfol.io and has sent you the following message: </p>
                     <div style="margin: 2em; padding: 2em; background-color: #f5f5f5; width: 60%; border-radius: 20px">
                     <h3><b>${req.body.messageBody.subject}</b></h3>
                     <p>${req.body.messageBody.message}<br/></p>
                     </div>
-                    <p>Please click <a href="mailto:${requesterEmail}" style="color:#000">here</a> to reply to ${requesterName}, or click <a href="${portfolioDomain}/logIn" target="_blank" style="color:#000">here</a> to log into your Portfol.io account. </p></br></br>
+                    <p>Please click <a href="mailto:${requesterEmail}" style="color:#000">here</a> to reply to ${requesterName}, or click <a href="${portfolioDomain}" target="_blank" style="color:#000">here</a> to log into your Portfol.io account. </p></br></br>
                 <p>Thank you for using our services.<br />
                 Your Portfol.io Team <br/>
                 <img src="https://i.imgur.com/TXykstZ.png" style="margin: 1em; width: 80px; height: 80px"></p>
